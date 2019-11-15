@@ -1,20 +1,36 @@
 {
   "name": "book-collection",
-  "version": "1.0.0",
-  "description": "Book Collection Database Application",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.2.0"
+  },
+  "main": "src/electron-starter.js",
   "scripts": {
-	"start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+	"electron": "electron ."
   },
-  "repository": {
-    "type": "git",
-    "url": "https://git-classes.mst.edu/crsgny/book-collection.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "author": "",
-  "license": "ISC",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
     "electron": "^7.1.1"
-  },
-  "dependencies": {}
+  }
 }
