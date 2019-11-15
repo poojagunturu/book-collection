@@ -14,5 +14,5 @@ Original installation was completed with https://www.freecodecamp.org/news/build
 	* Ensure your `.gitignore` includes `node_modules/`
 	
 ### Getting Started
-Run `npm start` to launch the application in a browser. If you have already launched the application, just go to `http://localhost:3000/` in a browser.
+Run `npm start` to launch the application in a browser. If you have already launched the application, just go to `http://localhost:3000/` in a browser.  
 Run `npm run electron` to launch the application in an Electron window.
