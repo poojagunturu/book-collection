@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Book Collection</title>
+    </head>
+    <body>
+        <h1>Connecting to Oracle Database.</h1>
+        <br>
+        <p>Check out the 'Console' tab of Developer Tools to see two queries being executed.</p>
+    </body>
+	<script>
+		const ipcRenderer = require('electron');
+		const oracledb = require('oracledb');
+		const dbConfig = require('./dbconfig.js');
+		
+		async function queryDatabase(query) {
+			// Connect to the database.
+			let connection = await oracledb.getConnection(dbConfig);
+			// Execute the query.
+			let result = await connection.execute(query);
+			// Release the connection to the database.
+			await connection.release();
+			return result;
+		}
+
+		queryHR = `SELECT * FROM KOOBP.OS_HR_LOCATIONS`;
+		queryAuthors = `SELECT AUTHOR, COUNT(*) AS AUTHORED_BOOKS
+							FROM JS2Q4.BOOK_AUTHOR
+							GROUP BY AUTHOR
+							ORDER BY AUTHOR ASC`;
+
+		const start = async function() {
+			var results;
+			
+			results = await queryDatabase(queryHR);
+			console.log(results);
+			
+			results = await queryDatabase(queryAuthors);
+			console.log(results);
+		}
+
+		// Call start
+		start();
+		// Anything executed here will not wait for the queries to finish execution.
+    </script>
+</html>
