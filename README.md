@@ -20,6 +20,7 @@ Original installation was completed with https://www.freecodecamp.org/news/build
 	* Add this directory to the `PATH` environment variable on your system
 	* Verify the Visual Studio 2017 Redistributable is installed (other versions: https://oracle.github.io/node-oracledb/INSTALL.html#instwin)
 	* Open `src/dbconfig.js` and **type your password in the file**
+	* Run `git update-index --assume-unchanged src/dbconfig.js` to stop tracking changes for your login credentials.
 	
 ### Getting Started
 Run `npm start` to launch the application in a browser. If you have already launched the application, just go to `http://localhost:3000/` in a browser.  
