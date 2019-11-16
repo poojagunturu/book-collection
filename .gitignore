@@ -1,2 +1,5 @@
 # dependencies
 /node_modules
+
+# do not track login info
+src/dbconfig.js
