@@ -12,7 +12,7 @@ Original installation was completed with https://www.freecodecamp.org/news/build
 	* [If no `package-lock.json` or `package.json` exists, run `npm init` with all of the defaults]
 	* Run `npm install --save-dev electron`
 	* Ensure your `.gitignore` includes `node_modules/`
-* Setup the Oracle Database Module
+* Setup the Oracle Database Module 
 Original setup was completed referencing https://github.com/oracle/node-oracledb.
 	* Run `npm install oracledb`
 	* Install the Basic Oracle Instant Client ZIP (https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html)
