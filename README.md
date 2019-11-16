@@ -13,7 +13,7 @@ Original installation was completed with https://www.freecodecamp.org/news/build
 	* Run `npm install --save-dev electron`
 	* Ensure your `.gitignore` includes `node_modules/`
 * Setup the Oracle Database Module 
-Original setup was completed referencing https://github.com/oracle/node-oracledb.
+	* Note: Original setup was completed referencing https://github.com/oracle/node-oracledb.
 	* Run `npm install oracledb`
 	* Install the Basic Oracle Instant Client ZIP (https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html)
 	* Extract the ZIP file to a location on your hard drive that you can remember (for example, `C:\oracle\instantclient_19_3`)
