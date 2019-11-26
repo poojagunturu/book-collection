@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Test from './TestContainer.js';
-
 class App extends Component {
   state = {
     response: '',
@@ -39,24 +37,24 @@ class App extends Component {
     this.setState({ responseToPost: body });
   };
   
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-      <Test/>
-        </header>
+	render() {
+	  return (
+		<div className="App">
+		  <header className="App-header">
+			<img src={logo} className="App-logo" alt="logo" />
+			<p>
+			  Edit <code>src/App.js</code> and save to reload.
+			</p>
+			<a
+			  className="App-link"
+			  href="https://reactjs.org"
+			  target="_blank"
+			  rel="noopener noreferrer"
+			>
+			  Learn React
+			</a>
+		  </header>
+		  <p>hi</p>
         <form onSubmit={this.handleSubmit}>
           <p>
             <strong>Post to Server:</strong>
@@ -69,9 +67,9 @@ class App extends Component {
           <button type="submit">Submit</button>
         </form>
         <p>{this.state.responseToPost}</p>
-      </div>
-    );
-    }
+		</div>
+	  );
+	}
 }
 
 export default App;
