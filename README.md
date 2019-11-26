@@ -25,6 +25,10 @@ Original installation was completed with https://www.freecodecamp.org/news/build
 	* Note: Original setup was completed referencing https://www.freecodecamp.org/news/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0/. 
 	* Run `npm install express body-parser concurrently`
 	* Verify `package.json` matches the version in the repository. Specifically, make sure `"proxy": "http://localhost:5000/"` is included and that `scripts` includes `"server": "node server.js"` and `"dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn start\""`.
+* Set Up Google Books API
+	* Note: Original setup was completed referencing https://learnwithparam.com/blog/learn-react-hooks-by-building-books-search/
+	* Run 'yarn add --dev prettier pretty-quick husky'
+	* Run 'yarn add axios'
 	
 ### Getting Started
 Run `yarn dev` to launch the application in a browser. To verify Express is working correctly, navigate to http://localhost:5000/api/hello.
