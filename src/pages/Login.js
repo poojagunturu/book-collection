@@ -39,7 +39,9 @@ function Login() {
                         </label>
                         <br /><br />
 
-                        <Link to="/bookDisplay">Login</Link>
+                        <Link to="/bookDisplay">
+                            <button>Login</button>
+                        </Link>
                     </form>
                 </div>
             </div>
