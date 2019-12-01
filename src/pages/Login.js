@@ -10,7 +10,7 @@ function Login() {
     return(
         <main>            
             <div className="container">
-                <h1>User Login:</h1>
+                <h1 style={{margin: 8}}>User Login:</h1>
                 <div className="inner-container">
                     <form>
                         <label>Username: </label>
@@ -39,7 +39,7 @@ function Login() {
                         </label>
                         <br /><br />
 
-                        <Link to="/bookDisplay">
+                        <Link to="/SelectSearch">
                             <button>Login</button>
                         </Link>
                     </form>

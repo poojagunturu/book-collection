@@ -30,10 +30,9 @@ class App extends Component {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ post: this.state.post }),
+      body: JSON.stringify({ post: formData }),
     });
     const body = await response.text();
-    
     this.setState({ responseToPost: body });
   };
   
