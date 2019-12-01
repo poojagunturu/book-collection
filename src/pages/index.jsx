@@ -7,7 +7,7 @@ const MainPage = () => {
     <div>
       <h3>Welcome to the React Router Tutorial</h3>
       <small>Main Page\n</small>
-      <Link to="/bookDisplay">Search for Google Book Information</Link>
+      <Link to="/BookDisplay">Search for Google Book Information</Link>
     </div>
   );
 };

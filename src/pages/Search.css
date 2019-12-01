@@ -1,0 +1,7 @@
+FormControl {
+    margin: 0,
+    fullWidth: true,
+    backgroundColor: '#9ee',
+    display: 'flex',
+    wrap: 'nowrap'
+  }

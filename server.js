@@ -22,13 +22,38 @@ app.get('/api/hello', (req, res) => {
 
 app.post('/api/world', async (req, res) => {
   // This is where we build queries based on what's put in the GUI. 
+  Object.entries(req.body).map( ([key, value]) => {
+    if (value) {
+      if(key == 'isbn'){
+        req.body[key] = "= '" +value + "'";
+      }
+      else {
+        req.body[key] = "= '" +value.toUpperCase() + "'";
+      }
+    }
+    else { 
+      req.body[key] = 'IS NULL';
+    }});
   console.log(req.body);
-  results = await queryDatabase(queryHR);
-  console.log(results);
-  res.send(
-    `I received your POST request. This is what you sent me: ${req.body.post}. \
-    Now I am going to perform a test query, here is what is returned: ${results}`,
-  );
+  var query ="SELECT JS2Q4.BOOK.ISBN,\n" +
+		"JS2Q4.BOOK.TITLE,\n" +
+		"JS2Q4.BOOK.EDITION,\n" +
+		"JS2Q4.BOOK.GENRE,\n" +
+		"JS2Q4.BOOK.PAGES,\n" +
+    "JS2Q4.BOOK.PUBLISHER,\n" +
+		"JS2Q4.BOOK.PUBLISHYEAR,\n" +
+		"COPY_TABLE.JACKET,\n" +
+		"COPY_TABLE.GRADE,\n" +
+		"COPY_TABLE.BINDING,\n" +
+		"COPY_TABLE.NOTES\n" +
+  "FROM JS2Q4.BOOK JOIN (SELECT * FROM JS2Q4.COPY INNER JOIN JS2Q4.BOOK_HAS_COPY ON JS2Q4.COPY.COPYID = JS2Q4.BOOK_HAS_COPY.COPYID) COPY_TABLE\n" +
+  "ON JS2Q4.BOOK.ISBN = COPY_TABLE.ISBN\n" +
+    "WHERE JS2Q4.BOOK.ISBN " + req.body.isbn  + " OR JS2Q4.BOOK.TITLE " + req.body.title +" OR JS2Q4.BOOK.PUBLISHER " + req.body.publisher + " OR JS2Q4.BOOK.PUBLISHYEAR " + req.body.publishYear + " OR JS2Q4.BOOK.GENRE " + req.body.genre + " OR JS2Q4.BOOK.PAGES " + req.body.numPages + " OR JS2Q4.BOOK.EDITION " + req.body.edition + " OR COPY_TABLE.JACKET " + req.body.jacket + " OR COPY_TABLE.GRADE " + req.body.grade + " OR COPY_TABLE.BINDING " + req.body.binding + " OR COPY_TABLE.NOTES " + req.body.notes;
+  //var query = "SELECT * FROM JS2Q4.BOOK WHERE ISBN " + req.body.isbn  +  " OR TITLE " + req.body.title + " OR PUBLISHER " + req.body.publisher + " OR PUBLISHYEAR " + req.body.publishYear + " OR GENRE " + req.body.genre + " OR PAGES " + req.body.numPages + " OR EDITION " + req.body.edition;
+  console.log(query);
+  results = await queryDatabase(query);
+  //console.log(results);
+  res.send(results);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
